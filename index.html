@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulário de E-mail</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #008080;
+    }
+
+    form {
+      margin: auto;
+      width: 50%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="submit"] {
+      background-color: #008080;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005555;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Formulário de E-mail</h1>
+  <form onsubmit="return validarEmail()">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email">
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    function validarEmail() {
+      var email = document.getElementById("email").value;
+      var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!regex.test(email)) {
+        alert("Por favor, insira um endereço de e-mail válido.");
+        return false;
+      }
+      alert("E-mail adicionado com sucesso : " + email);
+      return true;
+    }
+  </script>
+</body>
+
+</html>
+
+
